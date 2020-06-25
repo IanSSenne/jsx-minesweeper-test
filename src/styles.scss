@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+.cell {
+    width: 32px;
+    height: 32px;
+    border: 4px outset gray;
+    background-color: gray;
+    position: absolute;
+    top: calc(33px * var(--y) + 64px);
+    left: calc(33px * var(--x));
+    font-family: 'Press Start 2P', cursive;
+    &:not(.is-flipped):hover {
+        border: 4px outset #666;
+        background-color: #666;
+    }
+}
+
+.topbar {
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    top: 0px;
+    left: 0px;
+    width: calc(33px * var(--width) - 1px);
+    height: 64px;
+    border: 4px outset gray;
+    background-color: gray;
+    box-sizing: border-box;
+    .remaining-mines {
+        text-align: center;
+        display: table-cell;
+        vertical-align: middle;
+        box-sizing: border-box;
+        border: 4px outset #222;
+        background-color: #222;
+        width: 100px;
+        height: 56px;
+        color: red;
+    }
+    .settings-button {
+        width: 56px;
+        height: 56px;
+        position: absolute;
+        top: 0px;
+        left: calc(50% - 28px);
+    }
+}
+
+.is-flipped {
+    border: 4px inset gray;
+}
+
+.is-flagged {
+    background-image: url("./assets/flag.png");
+    background-size: cover;
+}
+
+.is-mine {
+    background-image: url("./assets/mine.png");
+    background-size: cover;
+    image-rendering: pixelated;
+}
+
+.settings {
+    position: absolute;
+    top: 64px;
+    left: 0px;
+    width: calc(33px * var(--width) - 1px);
+    height: calc(33px * var(--height) - 1px);
+    z-index: 1;
+    background-color: #cccc;
+}
+
+.hidden {
+    display: none;
+}
